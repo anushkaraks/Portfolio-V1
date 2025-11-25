@@ -37,4 +37,4 @@ JavaScript
 
 SVG-based elements and animations
 
-# View here!! https://anushkaraks.github.io/Portfolio-V1/
+# View here: https://anushkaraks.github.io/Portfolio-V1/
