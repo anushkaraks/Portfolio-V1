@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Anushka Rakesh_Portfolio</title>
 
-  <!-- Fonts -->
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Floating Background Decorations -->
   <div class="floating-shapes" aria-hidden="true">
     <div class="shape shape-1">✦</div>
     <div class="shape shape-2">◆</div>
@@ -22,7 +21,6 @@
     <div class="shape shape-6">✦</div>
   </div>
 
-  <!-- NAV -->
   <nav class="navbar">
     <div class="nav-inner">
       <div class="nav-left">
@@ -52,10 +50,8 @@
     </div>
   </nav>
 
-  <!-- INTRO — 3D PAPER ENVELOPE (Enhanced) -->
   <div id="intro-screen" class="intro-screen refined-intro" role="dialog" aria-label="Intro envelope">
     
-    <!-- Decorative sparkles around envelope -->
     <div class="envelope-sparkles" aria-hidden="true">
       <span class="sparkle sparkle-1">✦</span>
       <span class="sparkle sparkle-2">✧</span>
@@ -66,26 +62,23 @@
     </div>
 
     <div class="envelope-wrapper">
-      <!-- Soft shadow layer -->
+     
       <div class="envelope-shadow-layer"></div>
       
-      <!-- 3D Envelope SVG -->
       <div class="envelope-container" id="envelope" tabindex="0" role="button" aria-pressed="false" aria-label="Open portfolio envelope">
         <svg class="envelope-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-          <!-- Main envelope body -->
+  
           <defs>
-            <!-- Paper texture pattern -->
+         
             <pattern id="paperPattern" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
               <circle cx="1" cy="1" r="0.5" fill="#e0ddd8" opacity="0.1"/>
             </pattern>
-            
-            <!-- Envelope gradient -->
+         
             <linearGradient id="envelopeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
               <stop offset="0%" style="stop-color:#fefefe;stop-opacity:1" />
               <stop offset="100%" style="stop-color:#f5f3f0;stop-opacity:1" />
-            </linearGradient>
+            </linearGradient>   
             
-            <!-- Flap gradient -->
             <linearGradient id="flapGradient" x1="0%" y1="0%" x2="0%" y2="100%">
               <stop offset="0%" style="stop-color:#f5f3f0;stop-opacity:1" />
               <stop offset="100%" style="stop-color:#ebe7e2;stop-opacity:1" />
@@ -93,53 +86,40 @@
           </defs>
 
           <g class="envelope-body">
-            <!-- Back rectangle with gradient -->
+            
             <rect class="envelope-back" x="50" y="80" width="300" height="200" rx="6" fill="url(#envelopeGradient)" />
             
-            <!-- Paper texture overlay -->
             <rect x="50" y="80" width="300" height="200" rx="6" fill="url(#paperPattern)" />
             
-            <!-- Subtle inner shadow -->
             <rect x="52" y="82" width="296" height="196" rx="5" fill="none" stroke="#d4cfc8" stroke-width="1" opacity="0.3"/>
           </g>
-          
-          
-          <!-- Envelope flap (triangular top) -->
+
           <g class="envelope-flap-group" id="flap">
-            <!-- Flap shadow for depth -->
             <path class="flap-shadow" d="M 50 80 L 200 30 L 350 80 L 200 145 Z" fill="#e8e4df" opacity="0.6"/>
-            
-            <!-- Main flap with gradient -->
+         
             <path class="flap-front" d="M 50 80 L 200 30 L 350 80 L 200 145 Z" fill="url(#flapGradient)"/>
-            
-            <!-- Flap highlight edge -->
+         
             <path class="flap-edge" d="M 50 80 L 200 30 L 350 80" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.5"/>
-            
-            <!-- Flap center crease -->
+         
             <line x1="200" y1="30" x2="200" y2="145" stroke="#d4cfc8" stroke-width="1" opacity="0.3"/>
           </g>
-          
-          <!-- Letter inside (visible when flap opens) -->
+     
           <g class="letter-inside" opacity="0">
-            <!-- Letter paper -->
+      
             <rect x="80" y="110" width="240" height="150" rx="4" fill="#fefefe" stroke="#e0e0e0" stroke-width="1"/>
-            
-            <!-- Letter lines -->
+           
             <line x1="100" y1="135" x2="300" y2="135" stroke="#2e5fa8" stroke-width="2.5" opacity="0.8" />
             <line x1="100" y1="160" x2="280" y2="160" stroke="#4a5568" stroke-width="1.5" opacity="0.5" />
             <line x1="100" y1="180" x2="290" y2="180" stroke="#4a5568" stroke-width="1.5" opacity="0.5" />
             <line x1="100" y1="200" x2="270" y2="200" stroke="#4a5568" stroke-width="1.5" opacity="0.5" />
-            
-            <!-- Decorative seal -->
+       
             <circle cx="200" cy="230" r="18" fill="#2e5fa8" opacity="0.12" />
             <text x="200" y="235" font-size="16" fill="#2e5fa8" text-anchor="middle" opacity="0.5">✦</text>
           </g>
-          
-          <!-- Front envelope borders for depth -->
+      
           <rect class="envelope-border" x="50" y="80" width="300" height="200" rx="6" fill="none" stroke="#d4cfc8" stroke-width="2" />
         </svg>
 
-        <!-- Text overlay -->
         <div class="envelope-text">
           <div class="envelope-content">
             <h1 class="letter-title">Welcome!</h1>
@@ -159,10 +139,7 @@
     </div>
   </div>
 
-  <!-- MAIN -->
   <main id="main" class="hidden" role="main">
-
-    <!-- LANDING -->
     <section class="landing section" id="home" aria-labelledby="home-heading">
       <div class="landing-left">
         <div class="greeting-badge">
@@ -194,7 +171,7 @@
           </a>
         </div>
 
-        <!-- Skill badges -->
+        
         <div class="skill-badges">
           <span class="skill-badge">Java</span>
           <span class="skill-badge">Python</span>
@@ -206,7 +183,7 @@
 
       <div class="landing-right">
         <div class="profile-pic-frame" aria-hidden="true">
-          <!-- Decorative corner elements -->
+         
           <div class="frame-corner corner-tl">✦</div>
           <div class="frame-corner corner-tr">✦</div>
           <div class="frame-corner corner-bl">✦</div>
@@ -214,7 +191,7 @@
           
           <img src="assets/profile.png" alt="Anushka Rakesh" class="profile-pic" />
           
-          <!-- Fun floating badge -->
+       
           <div class="floating-badge">
             <span class="badge-text">Open to Work!</span>
           </div>
@@ -222,7 +199,7 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
+
     <section id="about" class="section" aria-labelledby="about-title">
       <div class="section-header">
         <h2 id="about-title" class="section-title">About Me</h2>
@@ -274,7 +251,7 @@
       </div>
     </section>
 
-    <!-- HOBBIES & FUN FACTS -->
+   
     <section id="fun" class="section fun-section" aria-labelledby="fun-title">
       <div class="section-header">
         <h2 id="fun-title" class="section-title">Hobbies &amp; Fun Facts</h2>
@@ -322,8 +299,7 @@
 </div>
       </div>
     </section>
-
-    <!-- HIGHLIGHTED PROJECTS -->
+    
     <section id="projects" class="section projects-section" aria-labelledby="projects-title">
       <div class="section-header">
         <h2 id="projects-title" class="section-title">Highlighted Projects</h2>
@@ -338,7 +314,7 @@
         </button>
 
         <div class="spotify-carousel" id="carousel" role="list">
-          <!-- Card 1 -->
+      
           <article class="spotify-card" role="listitem" aria-label="Love Jump project">
             <div class="card-badge">Featured</div>
             <div class="album-art">
@@ -365,7 +341,7 @@
             </div>
           </article>
 
-          <!-- Card 2 -->
+      
           <article class="spotify-card" role="listitem" aria-label="TravelBuddy project">
             <div class="card-badge">Web App</div>
             <div class="album-art">
@@ -392,7 +368,7 @@
             </div>
           </article>
 
-          <!-- Card 3 -->
+        
           <article class="spotify-card" role="listitem" aria-label="Password Tracker project">
             <div class="card-badge">Utility </div>
             <div class="album-art">
@@ -419,7 +395,7 @@
             </div>
           </article>
 
-          <!-- Card 4 -->
+         
           <article class="spotify-card" role="listitem" aria-label="Galaxy Wordle project">
             <div class="card-badge">Game</div>
             <div class="album-art">
@@ -456,7 +432,7 @@
       </div>
     </section>
 
-    <!-- MORE PROJECTS -->
+  
     <section class="section more-projects" aria-labelledby="more-title">
       <div class="section-header">
         <h2 id="more-title" class="section-title">More Projects</h2>
@@ -466,7 +442,7 @@
       <p class="section-subtitle">A collection of academic & practice projects</p>
 
       <div class="project-groups" role="list">
-        <!-- Java Projects -->
+        
         <div class="group java-group" role="listitem" aria-label="Java projects">
           <div class="group-header">
             <h3>Java Projects</h3>
@@ -496,7 +472,7 @@
           </div>
         </div>
 
-        <!-- HTML / CSS / JS Projects -->
+        
         <div class="group web-group" role="listitem" aria-label="HTML and CSS projects">
           <div class="group-header">
             <h3>HTML, CSS &amp; JavaScript</h3>
@@ -526,7 +502,7 @@
           </div>
         </div>
 
-        <!-- College Work -->
+       
         <div class="group college-group" role="listitem" aria-label="College project work">
           <div class="group-header">
             <h3>College Work</h3>
@@ -558,7 +534,7 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
+  
     <section id="contact" class="section contact-section" aria-labelledby="contact-title">
       <div class="section-header">
         <h2 id="contact-title" class="section-title">Let's Connect!</h2>
@@ -568,7 +544,7 @@
       <p class="section-subtitle">Always open to new opportunities and collaborations!</p>
 
       <div class="business-card" role="region" aria-label="Contact card">
-        <!-- Decorative corner stamps -->
+       
         <div class="card-stamp stamp-tl">✦</div>
         <div class="card-stamp stamp-tr">✦</div>
         
@@ -623,7 +599,6 @@
         </div>
       </div>
 
-      <!-- Fun footer note -->
       <div class="footer-note">
         <p>
           Made with lots of <span class="heart">❤️</span></span>
@@ -638,3 +613,4 @@
 </body>
 
 </html>
+
