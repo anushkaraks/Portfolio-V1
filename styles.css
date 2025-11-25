@@ -1,10 +1,4 @@
-/* =============================================================
-   MASTER STYLESHEET — FUN & UNIQUE PROFESSIONAL STYLE
-============================================================= */
 
-/* -------------------------------------------------------------
-   ROOT VARIABLES
-------------------------------------------------------------- */
 :root {
   --navy-dark: #061526;
   --navy-mid: #0b2340;
@@ -62,9 +56,7 @@ body {
   position: relative;
 }
 
-/* =============================================================
-   FLOATING BACKGROUND SHAPES
-============================================================= */
+
 .floating-shapes {
   position: fixed;
   top: 0;
@@ -141,9 +133,7 @@ body {
   }
 }
 
-/* =============================================================
-   NAVBAR
-============================================================= */
+
 .navbar {
   width: 100%;
   background: var(--navy-dark);
@@ -231,9 +221,6 @@ body {
   transform: scale(1.2);
 }
 
-/* =============================================================
-   3D PAPER ENVELOPE (ENHANCED)
-============================================================= */
 .intro-screen.refined-intro {
   position: fixed;
   inset: 0;
@@ -251,7 +238,6 @@ body {
   pointer-events: none;
 }
 
-/* Envelope sparkles */
 .envelope-sparkles {
   position: absolute;
   width: 600px;
@@ -314,14 +300,12 @@ body {
   }
 }
 
-/* Wrapper for shadow and envelope */
 .envelope-wrapper {
   position: relative;
   perspective: 1200px;
   z-index: 10;
 }
 
-/* Soft shadow layer beneath envelope */
 .envelope-shadow-layer {
   position: absolute;
   width: 500px;
@@ -335,7 +319,6 @@ body {
   transition: all 0.6s ease;
 }
 
-/* Main envelope container */
 .envelope-container {
   position: relative;
   width: 500px;
@@ -353,27 +336,22 @@ body {
   filter: blur(40px);
 }
 
-/* SVG Envelope */
 .envelope-svg {
   width: 100%;
   height: auto;
   filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.4));
 }
 
-
-/* Flap animation */
 .flap-front {
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: 200px 80px;
 }
 
-/* Letter inside envelope */
 .letter-inside {
   transition: opacity 0.6s ease 0.3s;
   opacity: 0;
 }
 
-/* Text overlay on envelope */
 .envelope-text {
   position: absolute;
   top: 73%;
@@ -385,7 +363,6 @@ body {
   z-index: 10;
   width: 90%;
 }
-
 
 .envelope-content {
   display: flex;
@@ -482,7 +459,6 @@ body {
   }
 }
 
-/* Opened state animation */
 .envelope-container.opened .flap-front {
   transform: rotateX(-180deg);
   opacity: 0.2;
@@ -492,9 +468,6 @@ body {
   opacity: 1;
 }
 
-/* =============================================================
-   SECTION HEADERS
-============================================================= */
 .section-header {
   text-align: center;
   margin-bottom: 50px;
@@ -559,9 +532,6 @@ body {
   font-style: italic;
 }
 
-/* =============================================================
-   MAIN CONTENT
-============================================================= */
 #main {
   padding-top: 80px;
   opacity: 1;
@@ -575,9 +545,7 @@ body {
   pointer-events: none;
 }
 
-/* =============================================================
-   LANDING SECTION
-============================================================= */
+
 .landing {
   background: white;
   padding: 75px;
@@ -614,7 +582,6 @@ body {
   z-index: 2;
 }
 
-/* Greeting badge */
 .greeting-badge {
   display: inline-flex;
   align-items: center;
@@ -667,7 +634,6 @@ body {
   position: relative;
 }
 
-/* Role tags */
 .role-tags {
   display: flex;
   gap: 12px;
@@ -704,7 +670,6 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* CTA Group */
 .cta-group {
   display: flex;
   gap: 14px;
@@ -757,7 +722,6 @@ body {
   transform: scale(1.2);
 }
 
-/* Skill badges */
 .skill-badges {
   display: flex;
   gap: 10px;
@@ -783,7 +747,6 @@ body {
   box-shadow: 0 4px 12px rgba(46, 95, 168, 0.25);
 }
 
-/* Profile picture */
 .profile-pic-frame {
   width: 300px;
   height: 300px;
@@ -849,7 +812,6 @@ body {
   transform: scale(1.08);
 }
 
-/* Floating badge */
 .floating-badge {
   position: absolute;
   bottom: 20px;
@@ -881,28 +843,26 @@ body {
   }
 }
 
-/* =============================================================
-   NOTEBOOK PAGES (About / Fun Facts)
-============================================================= */
+
 
 .notebook-page {
   background: var(--paper);
-  padding: 32px;                     /* smaller */
-  border-radius: 16px;               /* smaller */
+  padding: 32px;                     
+  border-radius: 16px;              
   box-shadow: var(--shadow-soft);
   border: 2px solid #eadfb3;
-  line-height: 1.65;                 /* tighter */
-  font-size: 16px;                   /* slightly smaller */
+  line-height: 1.65;                 
+  font-size: 16px;                  
   color: #3a2e19;
   font-family: 'Inter', sans-serif;
   position: relative;
-  max-width: 720px;                  /* reduced width */
+  max-width: 720px;                  
   margin: 0 auto;
 }
 
 .notebook-corner {
   position: absolute;
-  font-size: 16px;                   /* smaller */
+  font-size: 16px;                 
   color: var(--blue);
   opacity: 0.4;
 }
@@ -917,15 +877,14 @@ body {
   right: 12px;
 }
 
-/* About content */
 .about-content {
   display: flex;
   flex-direction: column;
-  gap: 16px;                         /* tighter */
+  gap: 16px;                         
 }
 
 .about-intro {
-  font-size: 17px;                   /* smaller */
+  font-size: 17px;                   
   font-weight: 500;
   color: var(--navy-mid);
   display: flex;
@@ -955,7 +914,6 @@ body {
   font-weight: 600;
 }
 
-/* Interests grid */
 .interests-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -967,7 +925,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 14px;                 /* tighter */
+  padding: 10px 14px;                 
   background: white;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
@@ -985,14 +943,13 @@ body {
   flex-shrink: 0;
 }
 
-/* Motto */
 .about-motto {
   text-align: center;
-  font-size: 16px;                    /* smaller */
+  font-size: 16px;                  
   font-style: italic;
   color: var(--navy-mid);
   margin-top: 16px;
-  padding: 16px;                      /* smaller */
+  padding: 16px;                     
   background: linear-gradient(135deg, var(--blue-light) 0%, white 100%);
   border-radius: 12px;
   position: relative;
@@ -1005,7 +962,6 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
-/* Lined notebook for fun facts */
 .notebook-page.lined {
   background: var(--paper);
   background-image:
@@ -1015,15 +971,13 @@ body {
   background-position: 50px 0, 0 0;
 }
 
-/* Fun intro */
 .fun-intro {
   margin-bottom: 14px;
-  font-size: 16px;                    /* smaller */
+  font-size: 16px;                    
   font-weight: 600;
   color: var(--navy-mid);
 }
 
-/* Fun list */
 .fun-list {
   list-style: none;
   padding: 0;
@@ -1034,8 +988,8 @@ body {
 }
 
 .fun-list li {
-  font-size: 15px;                    /* smaller */
-  padding: 10px 0;                    /* tighter */
+  font-size: 15px;                
+  padding: 10px 0;                   
   color: #3a2e19;
   display: flex;
   align-items: center;
@@ -1048,20 +1002,19 @@ body {
 }
 
 .fun-icon {
-  font-size: 20px;                    /* smaller */
+  font-size: 20px;                    
   flex-shrink: 0;
   filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
 }
 
 .fun-text {
   flex: 1;
-  max-width: 65ch;                    /* prevents too-wide long lines */
+  max-width: 65ch;                  
 }
 
-/* Fun fact box */
 .fun-fact-box {
   margin-top: 20px;
-  padding: 14px 18px;                 /* smaller */
+  padding: 14px 18px;               
   background: linear-gradient(135deg, var(--accent-yellow) 0%, #ffd700 100%);
   border-radius: 12px;
   box-shadow: 0 3px 12px rgba(255, 217, 61, 0.25);
@@ -1069,17 +1022,17 @@ body {
   align-items: center;
   gap: 10px;
   color: var(--navy-dark);
-  max-width: 520px;                   /* prevents overly wide box */
+  max-width: 520px;                   
 }
 
 .fact-icon {
-  font-size: 22px;                    /* smaller */
+  font-size: 22px;                    
   flex-shrink: 0;
 }
 
 .fun-fact-box p {
   margin: 0;
-  font-size: 15px;                    /* smaller */
+  font-size: 15px;                   
   font-weight: 500;
 }
 
@@ -1088,9 +1041,7 @@ body {
   color: var(--navy-dark);
 }
 
-/* =============================================================
-   HIGHLIGHTED PROJECTS — CAROUSEL
-============================================================= */
+
 .projects-section {
   background: transparent;
 }
@@ -1164,7 +1115,7 @@ body {
   background: var(--blue);
 }
 
-/* Project Card */
+
 .spotify-card {
   min-width: 340px;
   background: white;
@@ -1186,7 +1137,6 @@ body {
   border-color: var(--blue);
 }
 
-/* Card badge */
 .card-badge {
   position: absolute;
   top: 16px;
@@ -1203,7 +1153,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Album art with placeholder support */
 .album-art {
   width: 100%;
   height: 280px;
@@ -1238,7 +1187,6 @@ body {
   height: 100%;
 }
 
-/* Album info */
 .album-info {
   padding: 28px;
   text-align: left;
@@ -1329,9 +1277,6 @@ body {
   color: white;
 }
 
-/* =============================================================
-   MORE PROJECTS (Java / HTML,CSS,JS / College)
-============================================================= */
 .more-projects {
   background: transparent;
   padding: 0;
@@ -1450,7 +1395,6 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Group color variations */
 .java-group::before {
   background: linear-gradient(90deg, #b07219, #e8a83b);
 }
@@ -1475,9 +1419,6 @@ body {
   border-left-color: var(--accent-purple);
 }
 
-/* =============================================================
-   CONTACT — REFINED BUSINESS CARD
-============================================================= */
 .contact-section {
   margin-bottom: 160px;
 }
@@ -1510,7 +1451,6 @@ body {
   pointer-events: none;
 }
 
-/* Card stamps */
 .card-stamp {
   position: absolute;
   font-size: 22px;
@@ -1611,7 +1551,6 @@ body {
   color: white;
 }
 
-/* Contact items */
 .contact-item {
   margin: 16px 0;
   padding: 14px 0;
@@ -1657,7 +1596,6 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Footer note */
 .footer-note {
   text-align: center;
   margin-top: 60px;
@@ -1694,12 +1632,6 @@ body {
   }
 }
 
-.coffee {
-  color: #6f4e37;
-  display: inline-block;
-  animation: steam 2s ease-in-out infinite;
-}
-
 @keyframes steam {
   0%, 100% {
     transform: translateY(0);
@@ -1715,9 +1647,6 @@ body {
   opacity: 0.7;
 }
 
-/* =============================================================
-   KEYBOARD NAVIGATION & ACCESSIBILITY
-============================================================= */
 .keyboard-nav *:focus {
   outline: 3px solid var(--blue);
   outline-offset: 3px;
@@ -1736,11 +1665,6 @@ body {
   border-width: 0;
 }
 
-/* =============================================================
-   RESPONSIVE DESIGN
-============================================================= */
-
-/* Tablets and medium screens */
 @media (max-width: 900px) {
   .section {
     margin: 4px auto;
@@ -1808,7 +1732,6 @@ body {
   }
 }
 
-/* Mobile and small tablets */
 @media (max-width: 768px) {
   .nav-links {
     gap: 16px;
@@ -1944,7 +1867,6 @@ body {
   }
 }
 
-/* Small mobile devices */
 @media (max-width: 480px) {
   .nav-link-item span:not(.nav-icon) {
     display: none;
@@ -1985,7 +1907,6 @@ body {
   }
 }
 
-/* Print styles */
 @media print {
   .navbar,
   .floating-shapes,
@@ -1999,4 +1920,5 @@ body {
   .section {
     page-break-inside: avoid;
   }
+
 }
