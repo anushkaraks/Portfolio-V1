@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anushka Rakesh_Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Floating Background Decorations -->
+  <div class="floating-shapes" aria-hidden="true">
+    <div class="shape shape-1">✦</div>
+    <div class="shape shape-2">◆</div>
+    <div class="shape shape-3">✧</div>
+    <div class="shape shape-4">●</div>
+    <div class="shape shape-5">⬡</div>
+    <div class="shape shape-6">✦</div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <span class="logo-bracket">{</span>
+        ANUSHKA
+        <span class="logo-bracket">}</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#home" class="nav-link-item">
+          <span class="nav-icon"></span>
+          <span>Home</span>
+        </a>
+        <a href="#about" class="nav-link-item">
+          <span>About</span>
+        </a>
+        <a href="#fun" class="nav-link-item">
+          <span>Fun Facts</span>
+        </a>
+        <a href="#projects" class="nav-link-item">
+          <span>Projects</span>
+        </a>
+        <a href="#contact" class="nav-link-item">
+          <span>Contact</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- INTRO — 3D PAPER ENVELOPE (Enhanced) -->
+  <div id="intro-screen" class="intro-screen refined-intro" role="dialog" aria-label="Intro envelope">
+    
+    <!-- Decorative sparkles around envelope -->
+    <div class="envelope-sparkles" aria-hidden="true">
+      <span class="sparkle sparkle-1">✦</span>
+      <span class="sparkle sparkle-2">✧</span>
+      <span class="sparkle sparkle-3">✦</span>
+      <span class="sparkle sparkle-4">✧</span>
+      <span class="sparkle sparkle-5">✦</span>
+      <span class="sparkle sparkle-6">✧</span>
+    </div>
+
+    <div class="envelope-wrapper">
+      <!-- Soft shadow layer -->
+      <div class="envelope-shadow-layer"></div>
+      
+      <!-- 3D Envelope SVG -->
+      <div class="envelope-container" id="envelope" tabindex="0" role="button" aria-pressed="false" aria-label="Open portfolio envelope">
+        <svg class="envelope-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <!-- Main envelope body -->
+          <defs>
+            <!-- Paper texture pattern -->
+            <pattern id="paperPattern" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+              <circle cx="1" cy="1" r="0.5" fill="#e0ddd8" opacity="0.1"/>
+            </pattern>
+            
+            <!-- Envelope gradient -->
+            <linearGradient id="envelopeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#fefefe;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#f5f3f0;stop-opacity:1" />
+            </linearGradient>
+            
+            <!-- Flap gradient -->
+            <linearGradient id="flapGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#f5f3f0;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#ebe7e2;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+
+          <g class="envelope-body">
+            <!-- Back rectangle with gradient -->
+            <rect class="envelope-back" x="50" y="80" width="300" height="200" rx="6" fill="url(#envelopeGradient)" />
+            
+            <!-- Paper texture overlay -->
+            <rect x="50" y="80" width="300" height="200" rx="6" fill="url(#paperPattern)" />
+            
+            <!-- Subtle inner shadow -->
+            <rect x="52" y="82" width="296" height="196" rx="5" fill="none" stroke="#d4cfc8" stroke-width="1" opacity="0.3"/>
+          </g>
+          
+          
+          <!-- Envelope flap (triangular top) -->
+          <g class="envelope-flap-group" id="flap">
+            <!-- Flap shadow for depth -->
+            <path class="flap-shadow" d="M 50 80 L 200 30 L 350 80 L 200 145 Z" fill="#e8e4df" opacity="0.6"/>
+            
+            <!-- Main flap with gradient -->
+            <path class="flap-front" d="M 50 80 L 200 30 L 350 80 L 200 145 Z" fill="url(#flapGradient)"/>
+            
+            <!-- Flap highlight edge -->
+            <path class="flap-edge" d="M 50 80 L 200 30 L 350 80" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.5"/>
+            
+            <!-- Flap center crease -->
+            <line x1="200" y1="30" x2="200" y2="145" stroke="#d4cfc8" stroke-width="1" opacity="0.3"/>
+          </g>
+          
+          <!-- Letter inside (visible when flap opens) -->
+          <g class="letter-inside" opacity="0">
+            <!-- Letter paper -->
+            <rect x="80" y="110" width="240" height="150" rx="4" fill="#fefefe" stroke="#e0e0e0" stroke-width="1"/>
+            
+            <!-- Letter lines -->
+            <line x1="100" y1="135" x2="300" y2="135" stroke="#2e5fa8" stroke-width="2.5" opacity="0.8" />
+            <line x1="100" y1="160" x2="280" y2="160" stroke="#4a5568" stroke-width="1.5" opacity="0.5" />
+            <line x1="100" y1="180" x2="290" y2="180" stroke="#4a5568" stroke-width="1.5" opacity="0.5" />
+            <line x1="100" y1="200" x2="270" y2="200" stroke="#4a5568" stroke-width="1.5" opacity="0.5" />
+            
+            <!-- Decorative seal -->
+            <circle cx="200" cy="230" r="18" fill="#2e5fa8" opacity="0.12" />
+            <text x="200" y="235" font-size="16" fill="#2e5fa8" text-anchor="middle" opacity="0.5">✦</text>
+          </g>
+          
+          <!-- Front envelope borders for depth -->
+          <rect class="envelope-border" x="50" y="80" width="300" height="200" rx="6" fill="none" stroke="#d4cfc8" stroke-width="2" />
+        </svg>
+
+        <!-- Text overlay -->
+        <div class="envelope-text">
+          <div class="envelope-content">
+            <h1 class="letter-title">Welcome!</h1>
+            <p class="letter-sub">Anushka Rakesh's Portfolio</p>
+            <div class="letter-divider">
+              <span>✦</span>
+              <span>✦</span>
+              <span>✦</span>
+            </div>
+            <p class="open-hint">
+              <span class="hint-icon"></span>
+              Click or press Enter to open
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main id="main" class="hidden" role="main">
+
+    <!-- LANDING -->
+    <section class="landing section" id="home" aria-labelledby="home-heading">
+      <div class="landing-left">
+        <div class="greeting-badge">
+          <span class="wave">👋</span>
+          <span>Hello, I'm</span>
+        </div>
+        <h1 id="home-heading" class="heading">
+          <span class="heading-name">Anushka Rakesh</span>
+        </h1>
+        
+        <div class="role-tags">
+          <span class="role-tag">Developer 💻</span>
+          <span class="role-tag">Designer 🖋️</span>
+          <span class="role-tag">Creator 🎨</span>
+        </div>
+
+        <p class="tagline">
+          Building beautiful, functional digital experiences<br/>
+          with code, creativity, and a touch of magic!
+        </p>
+
+        <div class="cta-group">
+          <a class="cta primary" href="#projects">
+            <span>Explore Projects!</span>
+            <span class="cta-arrow">→</span>
+          </a>
+          <a class="cta secondary" href="#contact">
+            <span>Get in Touch!</span>
+          </a>
+        </div>
+
+        <!-- Skill badges -->
+        <div class="skill-badges">
+          <span class="skill-badge">Java</span>
+          <span class="skill-badge">Python</span>
+          <span class="skill-badge">C, C++</span>
+          <span class="skill-badge">HTML/CSS/JavaScript</span>
+          <span class="skill-badge">UI/UX</span>
+        </div>
+      </div>
+
+      <div class="landing-right">
+        <div class="profile-pic-frame" aria-hidden="true">
+          <!-- Decorative corner elements -->
+          <div class="frame-corner corner-tl">✦</div>
+          <div class="frame-corner corner-tr">✦</div>
+          <div class="frame-corner corner-bl">✦</div>
+          <div class="frame-corner corner-br">✦</div>
+          
+          <img src="assets/profile.png" alt="Anushka Rakesh" class="profile-pic" />
+          
+          <!-- Fun floating badge -->
+          <div class="floating-badge">
+            <span class="badge-text">Open to Work!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="section-header">
+        <h2 id="about-title" class="section-title">About Me</h2>
+        <div class="title-underline"></div>
+      </div>
+      
+      <div class="notebook-page" role="region" aria-label="About me">
+        <div class="notebook-corner top-left">✦</div>
+        <div class="notebook-corner top-right">✦</div>
+        
+        <div class="about-content">
+          <p class="about-intro">
+            Hey there! I'm Anushka Rakesh, a student from SRM University. I am currently in my second year pursuing a Btech in Computer Science with specialisation in Software Engineering. I am a passionate developer who loves building creative, meaningful projects.
+          </p>
+          
+          <p>
+            My projects combine <strong>logical depth</strong> (Java, Python, C) with 
+            <strong>clean, aesthetic UI design</strong>. I believe great software should be both 
+            <strong>functional</strong> and <strong>beautiful</strong>.
+          </p>
+
+          <div class="interests-grid">
+            <div class="interest-item">
+              <span>Front-end Development</span>
+            </div>
+            <div class="interest-item">
+              <span>Computer Vision</span>
+            </div>
+            <div class="interest-item">
+              <span>UI/UX Design</span>
+            </div>
+            <div class="interest-item">
+              <span>Writing & Documentation</span>
+            </div>
+            <div class="interest-item">
+              <span>Travelling</span>
+            </div>
+            <div class="interest-item">
+              <span>Continuous Learning</span>
+            </div>
+          </div>
+
+          <p class="about-motto">
+            <span class="quote-mark">❝</span>
+            I document everything I learn along the way
+            <span class="quote-mark">❞</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOBBIES & FUN FACTS -->
+    <section id="fun" class="section fun-section" aria-labelledby="fun-title">
+      <div class="section-header">
+        <h2 id="fun-title" class="section-title">Hobbies &amp; Fun Facts</h2>
+        <div class="title-underline"></div>
+      </div>
+      
+      <div class="notebook-page lined" role="region" aria-label="Hobbies and fun facts">
+        <div class="notebook-corner top-left">✦</div>
+        <div class="notebook-corner top-right">✦</div>
+        
+<div class="fun-intro">
+  <p>When I'm not coding, you'll usually find me...</p>
+</div>
+
+<ul class="fun-list">
+  <li>
+    <span class="fun-icon">●</span>
+    <span class="fun-text">Exploring creative code and building fun interactive visuals</span>
+  </li>
+  <li>
+    <span class="fun-icon">△</span>
+    <span class="fun-text">Travelling to new places and collecting little adventures</span>
+  </li>
+  <li>
+    <span class="fun-icon">✎</span>
+    <span class="fun-text">Drawing mandalas and spontaneous doodles</span>
+  </li>
+  <li>
+    <span class="fun-icon">✦</span>
+    <span class="fun-text">Trying quirky food combinations just for fun</span>
+  </li>
+  <li>
+    <span class="fun-icon">♪</span>
+    <span class="fun-text">Watching my comfort TV shows and rewatching classic favourites</span>
+  </li>
+  <li>
+    <span class="fun-icon">◇</span>
+    <span class="fun-text">Catching up on sleep and recharging properly</span>
+  </li>
+</ul>
+
+        <div class="fun-fact-box">
+  <span class="fact-icon">💡</span>
+  <p><strong>Fun Fact:</strong> I create small games that heal my inner child.</p>
+</div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTED PROJECTS -->
+    <section id="projects" class="section projects-section" aria-labelledby="projects-title">
+      <div class="section-header">
+        <h2 id="projects-title" class="section-title">Highlighted Projects</h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <p class="section-subtitle">Here are some of my favorite creations!</p>
+
+      <div class="carousel-container" aria-roledescription="carousel">
+        <button class="carousel-btn left" id="leftBtn" aria-label="Scroll carousel left" title="Previous project">
+          <span>←</span>
+        </button>
+
+        <div class="spotify-carousel" id="carousel" role="list">
+          <!-- Card 1 -->
+          <article class="spotify-card" role="listitem" aria-label="Love Jump project">
+            <div class="card-badge">Featured</div>
+            <div class="album-art">
+              <img src="assets/lovejump.jpg" alt="Love Jump screenshot" onerror="this.style.display='none'"/>
+              <div class="img-placeholder" aria-hidden="true">
+                  <rect width="100%" height="100%" rx="12" fill="#f0f4ff"/>
+                  <circle cx="100" cy="80" r="28" fill="#c6d9ff" />
+                  <rect x="60" y="130" width="80" height="12" rx="6" fill="#c6d9ff" />
+                  <rect x="70" y="150" width="60" height="8" rx="4" fill="#d9e6ff" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="album-info">
+              <div class="project-header">
+                <h3>Love Jump 1.0</h3>
+                <span class="project-tag">HTML, CSS &amp; JS</span>
+              </div>
+              <p>A cute interactive mini-game built with HTML, CSS and JavaScript. Bounce through and collect the hearts! But don't dash the thorns!! Cupid wishes he had your moves! </p>
+              <a class="album-btn" href="https://anushkaraks.github.io/Love-Jump-/" target="_blank" rel="noopener">
+                <span>View Project</span>
+                <span class="btn-arrow">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="spotify-card" role="listitem" aria-label="TravelBuddy project">
+            <div class="card-badge">Web App</div>
+            <div class="album-art">
+              <img src="assets/travelbuddy.jpg" alt="TravelBuddy screenshot" onerror="this.style.display='none'"/>
+              <div class="img-placeholder" aria-hidden="true">
+                                <rect width="100%" height="100%" rx="12" fill="#f0f4ff"/>
+                  <rect x="50" y="70" width="100" height="60" rx="6" fill="#c6d9ff" />
+                  <circle cx="80" cy="50" r="18" fill="#d9e6ff" />
+                  <rect x="60" y="145" width="80" height="10" rx="5" fill="#c6d9ff" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="album-info">
+              <div class="project-header">
+                <h3>TravelBuddy</h3>
+                <span class="project-tag">Full Stack </span>
+              </div>
+              <p>A small trip planner with itinerary saving and local storage — exclusive for SRM University!</p>
+              <a class="album-btn" href="https://anushkaraks.github.io/TravelBuddy-Website/" target="_blank" rel="noopener">
+                <span>View Project</span>
+                <span class="btn-arrow">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="spotify-card" role="listitem" aria-label="Password Tracker project">
+            <div class="card-badge">Utility </div>
+            <div class="album-art">
+              <img src="assets/passwordtracker.jpg" alt="Password Tracker screenshot" onerror="this.style.display='none'"/>
+              <div class="img-placeholder" aria-hidden="true">
+                  <rect width="100%" height="100%" rx="12" fill="#f0f4ff"/>
+                  <rect x="60" y="70" width="80" height="60" rx="8" fill="#c6d9ff" />
+                  <circle cx="100" cy="100" r="15" fill="#f0f4ff" />
+                  <rect x="95" y="100" width="10" height="18" rx="2" fill="#f0f4ff" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="album-info">
+              <div class="project-header">
+                <h3>Password Tracker</h3>
+                <span class="project-tag">Security</span>
+              </div>
+              <p>A simple Java Swing and JDBC-based app to securely store and view website login details in a MySQL database.</p>
+              <a class="album-btn" href="https://github.com/anushkaraks/PasswordTracker" target="_blank" rel="noopener">
+                <span>View Project</span>
+                <span class="btn-arrow">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="spotify-card" role="listitem" aria-label="Galaxy Wordle project">
+            <div class="card-badge">Game</div>
+            <div class="album-art">
+              <img src="assets/galaxywordle.jpg" alt="Galaxy Wordle screenshot" onerror="this.style.display='none'"/>
+              <div class="img-placeholder" aria-hidden="true">
+               <rect width="100%" height="100%" rx="12" fill="#f0f4ff"/>
+                  <rect x="50" y="60" width="30" height="30" rx="4" fill="#c6d9ff" />
+                  <rect x="85" y="60" width="30" height="30" rx="4" fill="#c6d9ff" />
+                  <rect x="120" y="60" width="30" height="30" rx="4" fill="#c6d9ff" />
+                  <rect x="50" y="100" width="30" height="30" rx="4" fill="#d9e6ff" />
+                  <rect x="85" y="100" width="30" height="30" rx="4" fill="#d9e6ff" />
+                  <rect x="120" y="100" width="30" height="30" rx="4" fill="#d9e6ff" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="album-info">
+              <div class="project-header">
+                <h3>Galaxy Wordle</h3>
+                <span class="project-tag">Interactive</span>
+              </div>
+              <p>A cosmic-themed Wordle variant with custom animations and theming. Blast off for brain-teasing word hunts in a galaxy far, far away! </p>
+              <a class="album-btn" href="https://anushkaraks.github.io/Wordle_GalaxyEdition/" target="_blank" rel="noopener">
+                <span>View Project</span>
+                <span class="btn-arrow">→</span>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <button class="carousel-btn right" id="rightBtn" aria-label="Scroll carousel right" title="Next project">
+          <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- MORE PROJECTS -->
+    <section class="section more-projects" aria-labelledby="more-title">
+      <div class="section-header">
+        <h2 id="more-title" class="section-title">More Projects</h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <p class="section-subtitle">A collection of academic & practice projects</p>
+
+      <div class="project-groups" role="list">
+        <!-- Java Projects -->
+        <div class="group java-group" role="listitem" aria-label="Java projects">
+          <div class="group-header">
+            <h3>Java Projects</h3>
+          </div>
+          <div class="group-items">
+            <div class="mini-card">
+              <div class="mini-card-header">
+                <strong>Library Book Management System</strong>
+                <span class="mini-tag">JDBC</span>
+              </div>
+              <p class="muted">A user friendly website that lets users add, view, update, and delete books with a live database connection. </p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-header">
+                <strong>Interactive To-do List</strong>
+                <span class="mini-tag">Java Swing</span>
+              </div>
+              <p class="muted">A modern Java Swing To-Do List app with MySQL integration that lets users add, delete, and clear tasks with data persistence. </p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-header">
+                <strong>Arithmetic Calculator</strong>
+                <span class="mini-tag">Operations</span>
+              </div>
+              <p class="muted">A user-friendly calculator with a clean interface to perform basic arithmetic operations. </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- HTML / CSS / JS Projects -->
+        <div class="group web-group" role="listitem" aria-label="HTML and CSS projects">
+          <div class="group-header">
+            <h3>HTML, CSS &amp; JavaScript</h3>
+          </div>
+          <div class="group-items">
+            <div class="mini-card">
+              <div class="mini-card-header">
+                <strong>Portfolio v1</strong>
+                <span class="mini-tag">Responsive</span>
+              </div>
+              <p class="muted">My first portfolio attempt featuring a clean layout, responsive sections, and simple animations.</p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-header">
+                <strong>Supermarket Food Collector</strong>
+                <span class="mini-tag">Fun</span>
+              </div>
+              <p class="muted">Dodge the trash, snag the snacks! </p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-header">
+                <strong>Kart Racer</strong>
+                <span class="mini-tag">UI/UX</span>
+              </div>
+              <p class="muted">A themed racing-style interface designed for gamers with high thrill.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- College Work -->
+        <div class="group college-group" role="listitem" aria-label="College project work">
+          <div class="group-header">
+            <h3>College Work</h3>
+          </div>
+          <div class="group-items">
+            <div class="mini-card">
+              <div class="mini-card-header">
+                <strong>Operating Systems Report</strong>
+                <span class="mini-tag">Theory</span>
+              </div>
+              <p class="muted">A structured research report analyzing the Uber data breach and related OS security concepts.</p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-header">
+                <strong>Data Structures Notes</strong>
+                <span class="mini-tag">DSA</span>
+              </div>
+              <p class="muted">Organized handwritten notes covering core DSA concepts, examples, and problem breakdowns.</p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-header">
+                <strong>Java &amp; Python Assignments</strong>
+                <span class="mini-tag">Practice</span>
+              </div>
+              <p class="muted">Hands-on lab exercises focused on logic building, string handling, and foundational programming.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+      <div class="section-header">
+        <h2 id="contact-title" class="section-title">Let's Connect!</h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <p class="section-subtitle">Always open to new opportunities and collaborations!</p>
+
+      <div class="business-card" role="region" aria-label="Contact card">
+        <!-- Decorative corner stamps -->
+        <div class="card-stamp stamp-tl">✦</div>
+        <div class="card-stamp stamp-tr">✦</div>
+        
+        <div class="card-left">
+          <h3 class="card-name">Anushka Rakesh</h3>
+          <p class="card-role">
+             Developer 
+            <span class="role-divider">·</span> 
+            Designer 
+            <span class="role-divider">·</span> 
+            Creator
+          </p>
+
+          <div class="contact-actions">
+            <a class="album-btn download-btn" href="assets/Anushka_Rakesh_Resume.pdf" download>
+              <span>Download Resume!</span>
+            </a>
+            <a class="album-btn secondary email-btn" href="mailto:yourmail@example.com">
+              <span>Email Me!</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card-right">
+          <div class="contact-item">
+            <strong>
+   		Email
+            </strong>
+            <a href="mailto:anushka.anchu@gmail.com">anushka.anchu@gmail.com</a>
+          </div>
+          
+          <div class="contact-item">
+            <strong>
+   		GitHub
+            </strong>
+            <a href="https://github.com/anushkaraks" target="_blank" rel="noopener">github.com/anushkaraks</a>
+          </div>
+          
+          <div class="contact-item">
+            <strong>
+              LinkedIn
+            </strong>
+            <a href="https://www.linkedin.com/in/anushka-rakesh-605466324/" target="_blank" rel="noopener">linkedin.com/in/anushka-rakesh-605466324/</a>
+          </div>
+          
+          <div class="contact-item">
+            <strong>
+              Location
+            </strong>
+            <span class="location-text">Chennai, Tamil Nadu, India </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fun footer note -->
+      <div class="footer-note">
+        <p>
+          Made with lots of <span class="heart">❤️</span></span>
+        </p>
+        <p class="footer-subtext">© 2025 Anushka Rakesh. All rights reserved.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
