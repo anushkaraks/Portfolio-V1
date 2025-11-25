@@ -1,10 +1,4 @@
-/* =============================================================
-   FINAL SCRIPT — Fun & Unique Professional Portfolio
-============================================================= */
 
-/* ----------------------------
-   ELEMENT REFERENCES
----------------------------- */
 const intro = document.getElementById("intro-screen");
 const envelope = document.getElementById("envelope");
 const main = document.getElementById("main");
@@ -15,17 +9,13 @@ const rightBtn = document.getElementById("rightBtn");
 
 let envelopeOpened = false;
 
-
-/* =============================================================
-   FUN GREETING BASED ON TIME
-============================================================= */
 function getGreetingEmoji() {
   const hour = new Date().getHours();
   
-  if (hour >= 5 && hour < 12) return "🌅"; // Morning
-  if (hour >= 12 && hour < 17) return "☀️"; // Afternoon
-  if (hour >= 17 && hour < 21) return "🌆"; // Evening
-  return "🌙"; // Night
+  if (hour >= 5 && hour < 12) return "🌅"; 
+  if (hour >= 12 && hour < 17) return "☀️"; 
+  if (hour >= 17 && hour < 21) return "🌆"; 
+  return "🌙"; 
 }
 
 function updateGreeting() {
@@ -47,9 +37,6 @@ function updateGreeting() {
 }
 
 
-/* =============================================================
-   CONFETTI EFFECT
-============================================================= */
 function createConfetti(x, y, count = 30) {
   const colors = ['#2e5fa8', '#cddcff', '#ffd93d', '#ff6b9d', '#c084fc', '#4ade80'];
   
@@ -87,7 +74,7 @@ function animateConfetti(element, vx, vy) {
   let rotation = 0;
   
   function update() {
-    velocityY += 0.3; // gravity
+    velocityY += 0.3; 
     x += velocityX;
     y += velocityY;
     rotation += 5;
@@ -108,10 +95,6 @@ function animateConfetti(element, vx, vy) {
   requestAnimationFrame(update);
 }
 
-
-/* =============================================================
-   SPARKLE EFFECT ON CURSOR
-============================================================= */
 let sparkleEnabled = false;
 
 function createSparkle(x, y) {
@@ -134,7 +117,6 @@ function createSparkle(x, y) {
   setTimeout(() => sparkle.remove(), 1500);
 }
 
-// CSS animation (add dynamically if not in stylesheet)
 if (!document.querySelector('#sparkle-animation')) {
   const style = document.createElement('style');
   style.id = 'sparkle-animation';
@@ -157,7 +139,7 @@ if (!document.querySelector('#sparkle-animation')) {
   document.head.appendChild(style);
 }
 
-// Enable sparkles when hovering over special elements
+
 document.addEventListener('mousemove', (e) => {
   const target = e.target;
   if (target.closest('.profile-pic-frame, .envelope-container, .spotify-card')) {
@@ -168,17 +150,12 @@ document.addEventListener('mousemove', (e) => {
 });
 
 
-/* =============================================================
-   ENVELOPE OPEN — 3D SVG Fold + Confetti Celebration
-============================================================= */
 function openEnvelope() {
   if (envelopeOpened) return; 
   envelopeOpened = true;
 
-  // Add opened class to trigger SVG flap animation
   envelope.classList.add("opened");
-  
-  // Confetti celebration!
+
   const rect = envelope.getBoundingClientRect();
   const centerX = rect.left + rect.width / 2;
   const centerY = rect.top + rect.height / 2;
@@ -187,32 +164,25 @@ function openEnvelope() {
     createConfetti(centerX, centerY, 40);
   }, 400);
 
-  // Fade out intro background after flap starts opening
   setTimeout(() => {
     intro.style.transition = "opacity 0.7s ease";
     intro.style.opacity = "0";
   }, 600);
 
-  // Remove intro and reveal main content
   setTimeout(() => {
     intro.classList.add("hidden");
     intro.style.display = "none";
     main.classList.remove("hidden");
     main.style.opacity = "1";
     window.scrollTo({ top: 0, behavior: "smooth" });
-    
-    // Update greeting after opening
-    updateGreeting();
-    
-    // Enable sparkle mode
+
+    updateGreeting();       
     sparkleEnabled = true;
   }, 1300);
 }
 
-// Mouse click opens envelope
 envelope.addEventListener("click", openEnvelope);
 
-// Keyboard support (Enter + Space)
 envelope.addEventListener("keydown", (e) => {
   if (e.key === "Enter" || e.key === " ") {
     e.preventDefault();
@@ -220,17 +190,13 @@ envelope.addEventListener("keydown", (e) => {
   }
 });
 
-// Optional: Auto-open after 5 seconds if user doesn't interact
 setTimeout(() => {
   if (!envelopeOpened) {
     openEnvelope();
   }
-}, 5000);
+}, 8000);
 
 
-/* =============================================================
-   TYPING ANIMATION FOR TAGLINE
-============================================================= */
 function typeWriter(element, text, speed = 50) {
   if (!element) return;
   
@@ -249,7 +215,6 @@ function typeWriter(element, text, speed = 50) {
   type();
 }
 
-// Activate typing animation when landing section is visible
 const landingObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting && envelopeOpened) {
@@ -269,9 +234,6 @@ window.addEventListener('load', () => {
 });
 
 
-/* =============================================================
-   SMOOTH NAVIGATION WITH ACTIVE STATE
-============================================================= */
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener("click", (event) => {
     const href = link.getAttribute("href");
@@ -281,7 +243,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
     event.preventDefault();
 
-    // If envelope is closed → open first then scroll
+
     if (!envelopeOpened) {
       openEnvelope();
       setTimeout(() => {
@@ -289,14 +251,13 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
       }, 1400);
     } 
     else {
-      // Adjust scroll slightly to avoid hiding behind fixed navbar
+
       const offset = target.getBoundingClientRect().top + window.scrollY - 100;
       window.scrollTo({ top: offset, behavior: "smooth" });
     }
   });
 });
 
-// Active nav link highlighting on scroll
 const sections = document.querySelectorAll(".section");
 const navLinks = document.querySelectorAll(".nav-link-item");
 
@@ -323,10 +284,6 @@ window.addEventListener("scroll", () => {
   });
 });
 
-
-/* =============================================================
-   SCROLL PROGRESS INDICATOR
-============================================================= */
 function createScrollProgress() {
   const progressBar = document.createElement('div');
   progressBar.id = 'scroll-progress';
@@ -351,15 +308,11 @@ function createScrollProgress() {
 
 createScrollProgress();
 
-
-/* =============================================================
-   INTERACTIVE SKILL BADGES
-============================================================= */
 document.querySelectorAll('.skill-badge').forEach(badge => {
   badge.addEventListener('click', () => {
     const skill = badge.textContent.trim();
     
-    // Create floating notification
+   
     const notification = document.createElement('div');
     notification.textContent = `💡 Love ${skill} too? Let's connect!`;
     notification.style.cssText = `
@@ -380,7 +333,6 @@ document.querySelectorAll('.skill-badge').forEach(badge => {
     
     document.body.appendChild(notification);
     
-    // Add pop animation
     const popStyle = document.createElement('style');
     popStyle.textContent = `
       @keyframes popIn {
@@ -402,18 +354,12 @@ document.querySelectorAll('.skill-badge').forEach(badge => {
       setTimeout(() => notification.remove(), 300);
     }, 2000);
     
-    // Mini confetti
+
     const rect = badge.getBoundingClientRect();
     createConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2, 15);
   });
 });
 
-
-/* =============================================================
-   CAROUSEL — DRAG, TOUCH, ARROWS WITH ENHANCED FEEDBACK
-============================================================= */
-
-/* ---------- Drag to Scroll ---------- */
 let isDragging = false;
 let dragStartX = 0;
 let scrollStartLeft = 0;
@@ -443,7 +389,6 @@ carousel.addEventListener("mousemove", (e) => {
   carousel.scrollLeft = scrollStartLeft - walk;
 });
 
-/* ---------- Touch Support ---------- */
 carousel.addEventListener("touchstart", (e) => {
   dragStartX = e.touches[0].pageX;
   scrollStartLeft = carousel.scrollLeft;
@@ -455,7 +400,6 @@ carousel.addEventListener("touchmove", (e) => {
   carousel.scrollLeft = scrollStartLeft - walk;
 }, { passive: true });
 
-/* ---------- Arrow Buttons with Haptic Feedback ---------- */
 const scrollAmount = 370;
 
 leftBtn.addEventListener("click", () => {
@@ -464,7 +408,6 @@ leftBtn.addEventListener("click", () => {
     behavior: "smooth"
   });
   
-  // Visual feedback
   leftBtn.style.transform = "translateY(-50%) scale(0.9)";
   setTimeout(() => {
     leftBtn.style.transform = "translateY(-50%) scale(1)";
@@ -476,15 +419,13 @@ rightBtn.addEventListener("click", () => {
     left: scrollAmount,
     behavior: "smooth"
   });
-  
-  // Visual feedback
+
   rightBtn.style.transform = "translateY(-50%) scale(0.9)";
   setTimeout(() => {
     rightBtn.style.transform = "translateY(-50%) scale(1)";
   }, 150);
 });
 
-/* ---------- Keyboard Navigation ---------- */
 carousel.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft") {
     carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
@@ -493,7 +434,6 @@ carousel.addEventListener("keydown", (e) => {
   }
 });
 
-/* ---------- Update arrow visibility ---------- */
 function updateArrowVisibility() {
   if (!leftBtn || !rightBtn) return;
   
@@ -511,13 +451,8 @@ carousel.addEventListener("scroll", updateArrowVisibility);
 window.addEventListener("load", updateArrowVisibility);
 window.addEventListener("resize", updateArrowVisibility);
 
-
-/* =============================================================
-   PROJECT CARD HOVER EFFECTS
-============================================================= */
 document.querySelectorAll('.spotify-card').forEach(card => {
   card.addEventListener('mouseenter', () => {
-    // Add subtle glow effect
     card.style.boxShadow = '0 20px 60px rgba(46, 95, 168, 0.3)';
   });
   
@@ -527,15 +462,11 @@ document.querySelectorAll('.spotify-card').forEach(card => {
 });
 
 
-/* =============================================================
-   MINI CARD CLICK EFFECTS
-============================================================= */
 document.querySelectorAll('.mini-card').forEach(card => {
   card.addEventListener('click', () => {
     const rect = card.getBoundingClientRect();
     createConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2, 10);
     
-    // Pulse effect
     card.style.transform = 'translateX(8px) scale(1.02)';
     setTimeout(() => {
       card.style.transform = '';
@@ -543,10 +474,6 @@ document.querySelectorAll('.mini-card').forEach(card => {
   });
 });
 
-
-/* =============================================================
-   SCROLL REVEAL ANIMATION — Staggered
-============================================================= */
 const revealTargets = document.querySelectorAll(
   ".section, .spotify-card, .notebook-page, .landing, .group, .mini-card, .interest-item"
 );
@@ -566,7 +493,6 @@ function revealOnScroll() {
   });
 }
 
-// Initialize hidden state
 revealTargets.forEach((el) => {
   el.style.opacity = "0"; 
   el.style.transform = "translateY(40px)";
@@ -578,10 +504,6 @@ window.addEventListener("load", revealOnScroll);
 
 setTimeout(revealOnScroll, 100);
 
-
-/* =============================================================
-   INTERSECTION OBSERVER FOR COUNTING ANIMATIONS
-============================================================= */
 const observerOptions = {
   threshold: 0.3,
   rootMargin: "0px"
@@ -593,7 +515,6 @@ const sectionObserver = new IntersectionObserver((entries) => {
       entry.target.style.opacity = "1";
       entry.target.style.transform = "translateY(0)";
       
-      // Trigger section-specific animations
       if (entry.target.id === 'projects') {
         animateProjectCards();
       }
@@ -616,9 +537,6 @@ function animateProjectCards() {
 }
 
 
-/* =============================================================
-   EASTER EGG: KONAMI CODE
-============================================================= */
 const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 let konamiIndex = 0;
 
@@ -636,16 +554,14 @@ document.addEventListener('keydown', (e) => {
 });
 
 function activatePartyMode() {
-  // Confetti explosion!
   for (let i = 0; i < 5; i++) {
     setTimeout(() => {
       createConfetti(Math.random() * window.innerWidth, Math.random() * window.innerHeight / 2, 50);
     }, i * 200);
   }
   
-  // Show message
   const message = document.createElement('div');
-  message.textContent = '🎉 PARTY MODE ACTIVATED! 🎉';
+  message.textContent = 'PARTY MODE ACTIVATED! 🎉';
   message.style.cssText = `
     position: fixed;
     top: 50%;
@@ -670,13 +586,10 @@ function activatePartyMode() {
     setTimeout(() => message.remove(), 500);
   }, 3000);
   
-  console.log('🎊 You found the secret! You must be a developer too! 🎊');
+  console.log('You found the secret! You must be a developer too! 🎊');
 }
 
 
-/* =============================================================
-   PRELOAD IMAGES
-============================================================= */
 const imagesToPreload = [
   "assets/lovejump.jpg",
   "assets/travelbuddy.jpg",
@@ -691,9 +604,6 @@ imagesToPreload.forEach(src => {
 });
 
 
-/* =============================================================
-   PREVENT BROKEN PLACEHOLDER LINKS
-============================================================= */
 document.querySelectorAll(".album-btn").forEach(btn => {
   btn.addEventListener("click", (e) => {
     const href = btn.getAttribute("href");
@@ -701,7 +611,6 @@ document.querySelectorAll(".album-btn").forEach(btn => {
     if (!href || href.includes("yourusername") || href === "#") {
       e.preventDefault();
       
-      // Fun notification instead of alert
       const notification = document.createElement('div');
       notification.innerHTML = `
         <div style="display: flex; align-items: center; gap: 12px;">
@@ -751,20 +660,12 @@ document.querySelectorAll(".album-btn").forEach(btn => {
   });
 });
 
-
-/* =============================================================
-   SMOOTH SCROLL POLYFILL
-============================================================= */
 if (!('scrollBehavior' in document.documentElement.style)) {
   const smoothScrollPolyfill = document.createElement('script');
   smoothScrollPolyfill.src = 'https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js';
   document.head.appendChild(smoothScrollPolyfill);
 }
 
-
-/* =============================================================
-   ACCESSIBILITY ENHANCEMENTS
-============================================================= */
 document.addEventListener("keydown", (e) => {
   if (e.key === "Tab") {
     document.body.classList.add("keyboard-nav");
@@ -793,9 +694,6 @@ envelope.addEventListener("click", () => {
 });
 
 
-/* =============================================================
-   PERFORMANCE OPTIMIZATION
-============================================================= */
 function debounce(func, wait = 10) {
   let timeout;
   return function executedFunction(...args) {
@@ -808,10 +706,6 @@ function debounce(func, wait = 10) {
   };
 }
 
-
-/* =============================================================
-   FLOATING ACTION BUTTON (Back to Top)
-============================================================= */
 function createBackToTop() {
   const btn = document.createElement('button');
   btn.innerHTML = '↑';
@@ -851,7 +745,7 @@ function createBackToTop() {
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
-    // Mini confetti celebration
+ 
     const rect = btn.getBoundingClientRect();
     createConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2, 20);
   });
@@ -867,10 +761,6 @@ function createBackToTop() {
 
 createBackToTop();
 
-
-/* =============================================================
-   CONSOLE SIGNATURE
-============================================================= */
 console.log(
   "%c👋 Welcome to Anushka's Portfolio! ",
   "background: linear-gradient(135deg, #2e5fa8, #c084fc); color: #fff; padding: 12px 24px; font-size: 18px; border-radius: 8px; font-weight: bold;"
@@ -885,25 +775,16 @@ console.log(
 );
 
 
-/* =============================================================
-   INITIALIZE ON LOAD
-============================================================= */
 window.addEventListener('load', () => {
   console.log('🚀 Portfolio loaded successfully!');
   
-  // Add smooth appearance to main content
   setTimeout(() => {
     document.body.style.opacity = '1';
   }, 100);
   
-  // Initialize greeting
   updateGreeting();
 });
 
-
-/* =============================================================
-   DEBUG MODE (Set to false in production)
-============================================================= */
 const DEBUG = false;
 
 if (DEBUG) {
@@ -920,4 +801,5 @@ if (DEBUG) {
   window.addEventListener('scroll', debounce(() => {
     console.log("Scroll position:", window.scrollY);
   }, 500));
+
 }
